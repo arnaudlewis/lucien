@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /api/containers/status                  controllers.Application.containersStatus
+POST    /api/containers/stock                   controllers.Application.changeFuelStock
+POST    /api/containers/status/toggle           controllers.Application.toggelContainerStatus
+
+
+POST    /api/facturation/price                  controllers.Application.price
+POST    /api/facturation/history                controllers.Application.paymentHistory
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
