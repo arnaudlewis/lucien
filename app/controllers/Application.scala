@@ -9,10 +9,22 @@ import play.api.data.validation.Constraints._
 import scala.concurrent._
 import scala.concurrent.ExecutionContext.Implicits.global
 
-import models.{Client, Container, Pump, FuelType}
-import FuelType._
+import play.api.Logger
+
+import reactivemongo.bson._
+import reactivemongo.bson.BSONObjectID
+import reactivemongo.bson.BSONDocument
+import reactivemongo.api.collections.bson.BSONCollection
+import play.api.libs.json._
+import play.api.libs.functional.syntax._
+
+import models.{Client, Container, Pump}
 
 class Application extends Controller {
+
+  def index(url: String) = Action {
+    Ok(views.html.infos())
+  }
 
   def changeFuelStockForm = Form (
     tuple (
