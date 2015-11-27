@@ -10,7 +10,6 @@ POST    /api/containers/status/toggle           controllers.Application.toggelCo
 
 
 POST    /api/facturation/price                  controllers.Application.price
-POST    /api/facturation/history                controllers.Application.paymentHistory
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

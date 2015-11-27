@@ -10,11 +10,20 @@
 
   <pre>
 GET     /api/containers/status
+Show status of the fuel containers
+
 POST    /api/containers/stock
+Allow to change the stock
+PARAMETERS => "containerId" -> bigDecimal, "qty" -> bigDecimal
+
 POST    /api/containers/status/toggle
+Activate or deactivate a fuel container
+PARAMETERS => "containerId" -> text.verifying(nonEmpty)
 
 POST    /api/facturation/price
-POST    /api/facturation/history
+get price after taking fuel
+PARAMETERS => "pumpId" -> text.verifying(nonEmpty), "qty" -> bigDecimal, "fuelType" -> text.verifying(nonEmpty)
+
   </pre>
 
 </body>
